@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Bright Path</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="app">
+    <header class="top">
+      <nav class="nav" aria-label="Main navigation">
+        <a href="#" class="logo" aria-label="Bright Path home"><i></i>Bright Path</a>
+        <a href="#" class="on">Find Job</a>
+        <a href="#">Messages</a>
+        <a href="#">Hiring</a>
+        <a href="#">Community</a>
+        <a href="#">FAQ</a>
+        <span class="sp"></span>
+      </nav>
+
+      <div class="search" role="search">
+        <label class="field">
+          <span class="ic" aria-hidden="true">⌕</span>
+          <select id="role" aria-label="Role">
+            <option value="">Select role</option>
+            <option>Front-end Developer</option>
+            <option>Product Designer</option>
+            <option>Senior Data Analyst</option>
+            <option>Project Manager</option>
+          </select>
+        </label>
+
+        <label class="field">
+          <span class="ic" aria-hidden="true">⌖</span>
+          <select id="location" aria-label="Work location">
+            <option value="">Work location</option>
+            <option>Remote</option>
+            <option>Hybrid</option>
+            <option>On-site</option>
+          </select>
+        </label>
+
+        <label class="field">
+          <span class="ic" aria-hidden="true">▤</span>
+          <select id="experience" aria-label="Experience">
+            <option value="">Experience</option>
+            <option>Junior level</option>
+            <option>Senior level</option>
+          </select>
+        </label>
+
+        <label class="field">
+          <span class="ic" aria-hidden="true">▦</span>
+          <select id="pay-period" aria-label="Pay period">
+            <option value="m">Per month</option>
+            <option value="h">Per hour</option>
+          </select>
+        </label>
+
+        <div class="sal">
+          <div class="h">
+            <span>Salary range</span>
+            <span id="salTxt" aria-live="polite">R1,200 - R20,000</span>
+          </div>
+          <div class="rng">
+            <div class="fill" id="fill"></div>
+            <input type="range" id="lo" min="1200" max="20000" step="100" value="1200" aria-label="Minimum salary">
+            <input type="range" id="hi" min="1200" max="20000" step="100" value="20000" aria-label="Maximum salary">
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <main class="body">
+      <aside>
+        <div class="promo">
+          <span class="eyebrow">BRIGHT PATH PLUS</span>
+          <h3>Get your best profession with Bright Path</h3>
+          <button type="button" id="learn">Learn more</button>
+        </div>
+
+        <div class="filters">
+          <h4>Filters <span aria-hidden="true">◂</span></h4>
+          <div class="grp">Working time</div>
+          <div id="workingTimeFilters"></div>
+          <div class="grp">Employment type</div>
+          <div id="employmentTypeFilters"></div>
+          <button class="reset" id="reset" type="button">Reset filters</button>
+        </div>
+      </aside>
+
+      <section class="results" aria-label="Job results">
+        <div class="results-head">
+          <h2 id="resultsTitle">Recommended jobs</h2>
+          <button type="button" id="searchButton">Search jobs</button>
+        </div>
+        <form class="add-job-form" id="addJobForm">
+          <div>
+            <label for="jobTitle">Job title</label>
+            <input id="jobTitle" name="title" required>
+          </div>
+          <div>
+            <label for="jobCompany">Company</label>
+            <input id="jobCompany" name="company" required>
+          </div>
+          <div>
+            <label for="jobLocation">Location</label>
+            <select id="jobLocation" name="location">
+              <option>Remote</option>
+              <option>Hybrid</option>
+              <option>On-site</option>
+            </select>
+          </div>
+          <div>
+            <label for="jobPay">Monthly pay</label>
+            <input id="jobPay" name="pay" type="number" min="1200" max="20000" required>
+          </div>
+          <button type="submit">Add job</button>
+        </form>
+        <div class="application-summary" aria-label="Application summary">
+          <div class="summary-card">
+            <span>Jobs applied</span>
+            <strong id="appliedCount">0</strong>
+          </div>
+          <div class="summary-card">
+            <span>Rejected</span>
+            <strong id="rejectedCount">0</strong>
+          </div>
+          <div class="summary-card hired">
+            <span>Got the job</span>
+            <strong id="hiredCount">0</strong>
+          </div>
+        </div>
+        <div id="jobs" class="jobs"></div>
+      </section>
+    </main>
+    <footer class="footer">
+      <p><strong>Bright Path</strong> Get your dream job</p>
+      <p> 2026 Bright Path</p>
+    </footer>
+  </div>
+  <script src="script.js"></script>
+</body>
+</html>
